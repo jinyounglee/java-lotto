@@ -12,9 +12,9 @@ public enum Operator {
     DIVIDE("/", Operator::divide)
     ;
 
-    private String symbol;
+    private final String symbol;
 
-    private BinaryOperator<Integer> operate;
+    private final BinaryOperator<Integer> operate;
 
     Operator(final String symbol, final BinaryOperator<Integer> operate) {
         this.symbol = symbol;
@@ -36,7 +36,7 @@ public enum Operator {
         return a / b;
     }
 
-    public Integer calculate(Integer a, Integer b) {
+    public int calculate(int a, int b) {
         return operate.apply(a, b);
     }
 

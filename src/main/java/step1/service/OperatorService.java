@@ -2,9 +2,6 @@ package step1.service;
 
 import step1.utils.StringUtils;
 
-import java.util.Arrays;
-import java.util.Iterator;
-
 public class OperatorService {
 
     private static final String DELIMITER = " ";
@@ -12,7 +9,7 @@ public class OperatorService {
     public int operate(final String input) {
         String[] split = input.split(DELIMITER);
         int operatedNumber = 0;
-        for (int i = 0; i < split.length; i+=2) {
+        for (int i = 0; i < split.length; i += 2) {
             validate(split[i]);
             operatedNumber = operation(i, split, operatedNumber);
         }
